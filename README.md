@@ -29,7 +29,7 @@
 
 1. 访问 [GitHub](https://github.com) 并登录
 2. 点击右上角的 "+" -> "New repository"
-3. 仓库名称可以叫 `personal-nav` 或您喜欢的名字
+3. 仓库名称可以叫 `myhome` 或您喜欢的名字
 4. 选择 "Public" 或 "Private"（Private仓库也可以用GitHub Pages）
 5. 点击 "Create repository"
 
@@ -59,7 +59,7 @@ git add index.html style.css config.js script.js
 git commit -m "Initial commit"
 
 # 添加远程仓库（替换为您的仓库地址）
-git remote add origin https://github.com/您的用户名/personal-nav.git
+git remote add origin https://github.com/您的用户名/myhome.git
 
 # 推送
 git branch -M main
@@ -82,7 +82,7 @@ git push -u origin main
 等待几分钟后，您的网站将可以通过以下地址访问：
 
 ```
-https://您的用户名.github.io/personal-nav/
+https://您的用户名.github.io/myhome/
 ```
 
 ## 自定义网站
