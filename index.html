@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人导航</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,41 +15,57 @@
         <div class="blob blob-3"></div>
     </div>
     
-    <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-compass"></i>
-                    </div>
-                    <h1>我的个人导航</h1>
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">
+                    <i class="fas fa-th-large"></i>
+                    <span>分类</span>
                 </div>
-                <p class="greeting" id="greeting"></p>
-            </div>
-            
-            <div class="search-container">
-                <div class="search-box">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" id="searchInput" placeholder="搜索书签...">
-                </div>
-            </div>
-            
-            <nav class="category-nav" id="categoryNav"></nav>
-            
-            <div class="header-actions">
-                <button class="btn-add" id="btnAddBookmark" title="添加新书签">
-                    <i class="fas fa-plus"></i>
+                <button class="sidebar-toggle" id="sidebarToggle" title="收起侧栏">
+                    <i class="fas fa-chevron-left"></i>
                 </button>
             </div>
-        </header>
+            <nav class="category-nav" id="categoryNav"></nav>
+        </aside>
 
-        <main id="linksContainer" class="links-grid"></main>
-        
-        <div class="time-display" id="timeDisplay"></div>
-        
-        <footer class="footer">
-            <p>使用 ❤️ 制作 | 点击编辑书签</p>
-        </footer>
+        <div class="main-area">
+            <header class="header">
+                <div class="header-content">
+                    <div class="profile-section">
+                        <div class="profile-avatar">Z</div>
+                        <div class="profile-info">
+                            <h1 class="profile-name">我的导航</h1>
+                            <p class="greeting" id="greeting"></p>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <div class="clock-section">
+                            <div class="clock-display" id="clockDisplay">00:00:00</div>
+                            <div class="clock-date" id="clockDate"></div>
+                        </div>
+                        <button class="btn-add" id="btnAddBookmark" title="添加新书签">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="搜索书签...">
+                    </div>
+                </div>
+
+                <nav class="compact-category-nav" id="compactCategoryNav"></nav>
+            </header>
+
+            <main id="linksContainer" class="links-grid"></main>
+            
+            <footer class="footer">
+                <p>用 <span class="heart">❤</span> 制作 · 点击卡片访问网站</p>
+            </footer>
+        </div>
     </div>
     
     <div class="modal" id="addModal">
@@ -65,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label for="bookmarkUrl">网址</label>
-                    <input type="url" id="bookmarkUrl" placeholder="https://example.com" required>
+                    <input type="url" id="bookmarkUrl" class="url-field" placeholder="https://example.com" required>
                 </div>
                 <div class="form-group">
                     <label for="bookmarkDesc">描述</label>
@@ -110,7 +126,7 @@
                 </div>
                 <div class="form-group">
                     <label for="editBookmarkUrl">网址</label>
-                    <input type="url" id="editBookmarkUrl" required>
+                    <input type="url" id="editBookmarkUrl" class="url-field" required>
                 </div>
                 <div class="form-group">
                     <label for="editBookmarkDesc">描述</label>
